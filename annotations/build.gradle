@@ -1,14 +1,8 @@
-plugins {
-    id 'java'
-    id 'maven-publish'
-}
-
-afterEvaluate {
-    publishing {
-        publications.getByName(project.name) {
-            pom {
-                description = 'Java annotations to configure ProGuard, the free shrinker, optimizer, obfuscator, and preverifier for Java bytecode'
-            }
-        }
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.guardsquare:proguard-gradle:7.7.0'
     }
 }
